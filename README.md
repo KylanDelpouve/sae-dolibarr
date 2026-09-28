@@ -8,6 +8,8 @@
 - docker-compose.yml : Fichier de configuration de l'infrastructure Docker
 - suivi_projet.md : Journal de bord du projet
 - sources.md : Liste des liens et de la documentation utilisés
+- gitignore : empêche d'envoyer certains types de fichiers sur Git
+- gitattributes : pour le format Linux
 
 ## Prérequis
 Utilisation de Docker pour la conteneurisation

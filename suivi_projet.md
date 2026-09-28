@@ -62,3 +62,5 @@ Difficultés rencontrées :
 - Tests complets sur le fonctionnement de toutes les fonctionnalités demandées (script automatisation de l'installation et situation de crash)
 - Rédaction du fichier sources.md listant les sources utilisées
 - Rédaction du fichier README.md
+- Ajout de commentaires
+- Ajout fichier .gitignore et .gitattributes
