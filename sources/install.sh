@@ -1,14 +1,16 @@
 #!/bin/bash
+set -e
 
 echo "Démarrage de MariaDB uniquement..."
 docker compose up -d mariadb
 
-echo "Attente de l'initialisation de MariaDB (20 secondes)..."
-# Pause de 20 secondes pour laisser le temps au moteur SQL de s'initialiser totalement
-sleep 20
+echo "Attente de MariaDB..."
+until docker compose exec -T mariadb mariadb -h127.0.0.1 -uroot -proot -e "SELECT 1" >/dev/null 2>&1; do
+  sleep 2
+done
+echo "MariaDB est prête."
 
 echo "Restauration de la sauvegarde SQL..."
-# Injection silencieuse du fichier SQL pour reconstruire la structure de base
 docker compose exec -T mariadb mariadb -u doliuser -pdolipassword dolibarr < data/sauvegarde.sql
 
 echo "Démarrage de l'application Dolibarr..."

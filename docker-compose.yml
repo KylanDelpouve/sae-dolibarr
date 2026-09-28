@@ -1,6 +1,6 @@
 services:
   mariadb:
-    image: mariadb:latest
+    image: mariadb:11.8
     environment:
       # En temps normal, il faudrait mettre ces informations sensibles dans un fichier caché .env qui ne serait pas versionné sur Git
       MYSQL_ROOT_PASSWORD: root
@@ -13,7 +13,7 @@ services:
   dolibarr:
     image: dolibarr/dolibarr:latest
     ports:
-      - "80:80"
+      - "8080:80"
     environment:
       # En temps normal, il faudrait mettre ces informations sensibles dans un fichier caché .env qui ne serait pas versionné sur Git
       DOLI_DB_HOST: mariadb
