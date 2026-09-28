@@ -1,0 +1,3 @@
+# Configuration locale (mots de passe) : partir de .env.example
+.env
+*.tmp

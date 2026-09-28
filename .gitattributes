@@ -1,0 +1,5 @@
+# Fins de ligne LF forcées : évite les scripts cassés (\r) entre Windows et Linux
+*.sh text eol=lf
+*.yml text eol=lf
+*.csv text eol=lf
+.env.example text eol=lf

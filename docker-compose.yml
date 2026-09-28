@@ -2,6 +2,7 @@ services:
   mariadb:
     image: mariadb:latest
     environment:
+      # En temps normal, il faudrait mettre ces informations sensibles dans un fichier caché .env qui ne serait pas versionné sur Git
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: dolibarr
       MYSQL_USER: doliuser
@@ -14,6 +15,7 @@ services:
     ports:
       - "80:80"
     environment:
+      # En temps normal, il faudrait mettre ces informations sensibles dans un fichier caché .env qui ne serait pas versionné sur Git
       DOLI_DB_HOST: mariadb
       DOLI_DB_USER: doliuser
       DOLI_DB_PASSWORD: dolipassword
