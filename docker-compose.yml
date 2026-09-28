@@ -19,11 +19,14 @@ services:
       DOLI_DB_PASSWORD: dolipassword
       DOLI_DB_NAME: dolibarr
     depends_on:
+      # Force Docker à préparer le conteneur mariadb avant de lancer celui-ci
       - mariadb
     volumes:
+      # Persistance des fichiers du site et des documents générés par l'ERP (factures, devis)
       - dolibarr_html:/var/www/html
       - dolibarr_docs:/var/www/documents
 
+# Déclaration obligatoire des disques virtuels utilisés par les conteneurs ci-dessus
 volumes:
   db_data:
   dolibarr_html:
