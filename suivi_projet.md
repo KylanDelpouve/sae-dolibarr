@@ -57,7 +57,7 @@ Difficultés rencontrées :
 - Tests complets
 - Finir la rédaction des derniers fichiers
 
-## Séance n° 3 date - heure : 28/09/2026 - 08:30 à 11:30
+## Séance n° 3 et 4 date - heure : 28/09/2026 - 08:30 à 11:30 et 14:30 à 17h30
 
 - Tests complets sur le fonctionnement de toutes les fonctionnalités demandées (script automatisation de l'installation et situation de crash)
 - Rédaction du fichier sources.md listant les sources utilisées
