@@ -27,6 +27,6 @@ echo "Démarrage de l'application Dolibarr..."
 docker compose up -d dolibarr
 
 echo "Importation des nouvelles données CSV..."
-bash sources/import.csv.sh
+bash sources/import_csv.sh
 
 echo "Succès !"
