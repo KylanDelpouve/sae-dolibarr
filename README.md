@@ -18,6 +18,9 @@
 - Système d'exploitation : Compatible Windows (via Git Bash) ou Linux.
 
 ## Utilisation et plan de reprise d'activité
-L'installation est totalement automatisée via le script "install.sh". La commande suivante (à lancer à la racine du projet) permet de déployer l'infrastructure de zéro, restaurer la configuration de base de l'entreprise et importer les clients :
+Le projet utilise 3 scripts Bash principaux rangés dans le dossier sources :
+- import.csv.sh : Lit le fichier clients.csv et injecte les données directement dans la table llx_societe de MariaDB.
+- backup.sh : Exécute un mariadb-dump pour sauvegarder toute la base de données dans le dossier data.
+- install.sh : Script de PRA qui monte l'infrastructure, restaure la base de données SQL, allume Dolibarr et lance l'importation CSV.
 
-bash sources/install.sh
+Dolibarr est accessible depuis le navigateur sur http://localhost:8080 une fois les conteneurs lancés.

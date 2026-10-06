@@ -7,16 +7,9 @@ DATE DEBUT : 22/09/2026
 
 Ce document décrit la mise en place d'une infrastructure Docker pour l'ERP Dolibarr avec une base de données MariaDB. Il présente également l'automatisation de l'importation de données via des fichiers CSV, ainsi que la configuration d'un script de Plan de Reprise d'Activité (PRA) pour restaurer l'environnement en cas de crash.
 
-# 1. Utilisation
 
-Le projet utilise 3 scripts Bash principaux rangés dans le dossier sources :
-- import.csv.sh : Lit le fichier clients.csv et injecte les données directement dans la table llx_societe de MariaDB.
-- backup.sh : Exécute un mariadb-dump pour sauvegarder toute la base de données dans le dossier data.
-- install.sh : Script de PRA qui monte l'infrastructure, restaure la base de données SQL, allume Dolibarr et lance l'importation CSV.
 
-Dolibarr est accessible depuis le navigateur sur http://localhost:8080 une fois les conteneurs lancés.
-
-# 2. Journal de bord
+# 1. Journal de bord
 
 ## Séance n° 1 date - heure : 22/09/2026 - 08:30 à 10:00
 
@@ -111,7 +104,7 @@ ajout de set -e et de l'option --single-transaction pour un export cohérent pen
 - Correction du nom du script d'import dans la documentation (import_csv.sh).
 - Tests : lancement de install.sh, connexion à Dolibarr et vérification des Tiers, exécution de backup.sh (fichier sauvegarde.sql de 827 Ko, non vide), puis test du PRA avec docker compose down -v suivi de install.sh : l'infrastructure et les données sont bien restaurées.
 
-# 3. Astuces techniques
+# 2. Astuces techniques
 
 - Mettre l'option -T sur les commandes docker compose exec dans les scripts pour éviter que ça plante sous Windows.
 - Ajouter < /dev/null à la fin d'une commande Docker dans une boucle while pour l'empêcher de consommer les données du fichier texte en cours de lecture.
@@ -122,7 +115,7 @@ ajout de set -e et de l'option --single-transaction pour un export cohérent pen
 - Sous Windows, Docker Desktop nécessite WSL 2 : à installer et activer avant de lancer les scripts.
 - Lancer les scripts depuis la racine du dépôt (les chemins data/ et sources/ sont relatifs).
 
-# 4. Limites connues
+# 3. Limites connues
 
 - Comme on a inséré les clients en SQL brut sans remplir tous les champs cachés de Dolibarr, l'interface web refuse de supprimer ces clients manuellement (il faut faire un DELETE en SQL).
 - L'exécution des scripts Bash nécessite Git Bash (ou WSL) sous Windows.
