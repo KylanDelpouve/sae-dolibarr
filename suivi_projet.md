@@ -1,8 +1,8 @@
 # Journal de bord
 
 TITRE PROJET : SAÉ 51 - Installation d’un ERP/CRM  
-NOM CHEF DE PROJET : Kylan DELPOUVE
-NOMS AUTRE MEMBRES EQUIPE : Tanjona RANDRIANARISOLO
+NOM CHEF DE PROJET : Kylan DELPOUVE  
+NOMS AUTRE MEMBRES EQUIPE : Tanjona RANDRIANARISOLO  
 DATE DEBUT : 22/09/2026
 
 Ce document décrit la mise en place d'une infrastructure Docker pour l'ERP Dolibarr avec une base de données MariaDB. Il présente également l'automatisation de l'importation de données via des fichiers CSV, ainsi que la configuration d'un script de Plan de Reprise d'Activité (PRA) pour restaurer l'environnement en cas de crash.
@@ -13,6 +13,8 @@ Le projet utilise 3 scripts Bash principaux rangés dans le dossier sources :
 - import.csv.sh : Lit le fichier clients.csv et injecte les données directement dans la table llx_societe de MariaDB.
 - backup.sh : Exécute un mariadb-dump pour sauvegarder toute la base de données dans le dossier data.
 - install.sh : Script de PRA qui monte l'infrastructure, restaure la base de données SQL, allume Dolibarr et lance l'importation CSV.
+
+Dolibarr est accessible depuis le navigateur sur http://localhost:8080 une fois les conteneurs lancés.
 
 # 2. Journal de bord
 
@@ -44,23 +46,70 @@ Difficultés rencontrées :
 - La commande Docker "aspirait" les lignes du CSV dans la boucle Bash, empêchant l'importation du deuxième client.
 - Lors du test du PRA, MariaDB et Dolibarr démarraient en même temps, ce qui créait un conflit de tables dans la BDD. On a dû modifier le script pour démarrer la BDD en premier, faire la restauration, puis allumer l'application.
 
-3. Astuces techniques
-- Mettre l'option -T sur les commandes docker compose exec dans les scripts pour éviter que ça plante sous Windows.
-- Ajouter < /dev/null à la fin d'une commande Docker dans une boucle while pour l'empêcher de consommer les données du fichier texte en cours de lecture.
-- Séparer l'allumage des conteneurs (docker compose up -d mariadb puis dolibarr) permet de charger des données SQL sans que l'application ne vienne gêner.
-
-4. Limites connues
-- Comme on a inséré les clients en SQL brut sans remplir tous les champs cachés de Dolibarr, l'interface web refuse de supprimer ces clients manuellement (il faut faire un DELETE en SQL).
-- L'exécution des scripts Bash nécessite Git Bash sous Windows.
-
-5. A faire pour la prochaine séance :
+A faire à la prochaine séance :
 - Tests complets
 - Finir la rédaction des derniers fichiers
 
-## Séance n° 3 et 4 date - heure : 28/09/2026 - 08:30 à 11:30 et 14:30 à 17h30
+## Séance n° 3 date - heure : 28/09/2026 - 08:30 à 11:30
 
-- Tests complets sur le fonctionnement de toutes les fonctionnalités demandées (script automatisation de l'installation et situation de crash)
-- Rédaction du fichier sources.md listant les sources utilisées
-- Rédaction du fichier README.md
-- Ajout de commentaires
-- Ajout fichier .gitignore et .gitattributes
+Travail effectué :
+- Rédaction du fichier sources.md listant les sources utilisées.
+- Rédaction du fichier README.md.
+- Ajout de commentaires dans les scripts.
+- Ajout du fichier .gitignore (exclusion du fichier .env contenant les mots de passe et des fichiers temporaires *.tmp, avec un modèle .env.example).
+- Ajout du fichier .gitattributes (fins de ligne LF forcées pour les .sh, .yml, .csv et .env.example, afin d'éviter les scripts cassés par les \r entre Windows et Linux).
+
+Difficultés rencontrées :
+- Aucune difficulté majeure sur cette séance.
+
+A faire à la prochaine séance :
+- Rédiger la documentation (README.md, sources.md) et commenter les scripts.
+- Sécuriser le dépôt (mots de passe, fins de ligne).
+
+## Séance n° 4 date - heure : 28/09/2026 - 14:30 à 17:30
+
+
+Travail effectué :
+- Tests complets sur le fonctionnement de toutes les fonctionnalités demandées (script d'automatisation de l'installation et situation de crash).
+- Test de l'import natif de Dolibarr : import d'un fichier CSV via le menu Outils de l'interface web (accessible sur localhost:8080), pour vérifier que la base de données fonctionne et comprendre le fonctionnement de l'import côté Dolibarr, en complément de notre script import.csv.sh.
+- Choix d'une version stable de MariaDB (11.8) dans docker-compose.yml plutôt que la dernière version publiée ("latest"), afin de garantir un déploiement reproductible.
+
+
+Difficultés rencontrées :
+- Lors de l'import natif, le module d'import disparaît du menu après chaque import.
+- Toujours à l'import natif, la correspondance des colonnes avec le format attendu par Dolibarr pose problème : certaines colonnes n'ont pas de nom au moment de l'import, ou refusent d'être importées.
+A faire à la prochaine séance :
+- Tester le dépôt cloné sur un second poste (poste de Tanjona) pour valider la reproductibilité.
+
+## Séance n° 5 date - heure : 05/10/2026 - 13:00 à 16:00
+
+Travail effectué :
+- Clonage du dépôt sur le GitHub pour tester l'installation depuis zéro sur une seconde machine.
+- Installation et activation de WSL pour que Docker fonctionne sur ce poste.
+- Amélioration de install.sh : ajout d'une boucle d'attente (until ... SELECT 1) qui vérifie que MariaDB répond réellement aux requêtes avant de lancer la restauration du fichier sauvegarde.sql. Le script ne passe plus à l'étape suivante tant que la base n'est pas prête.
+- Nouveau test complet de la chaîne installation, restauration, démarrage de Dolibarr, puis import CSV.
+
+Difficultés rencontrées :
+- Après le clonage, Docker ne fonctionnait pas correctement sur le poste de Tanjona : WSL (sous-système Linux pour Windows) n'était pas installé/activé, or Docker Desktop en a besoin pour faire tourner les conteneurs.
+- Au lancement de install.sh, la création des conteneurs prenait beaucoup de temps sur ce poste. Le script enchaînait pourtant déjà les étapes suivantes alors que MariaDB n'était pas prête, ce qui provoquait des erreurs en cascade (restauration lancée trop tôt, connexion refusée). Résolu par la boucle d'attente décrite ci-dessus.
+
+A faire à la prochaine séance :
+- [À compléter : finalisation du README, relecture, rendu final...]
+
+# 3. Astuces techniques
+
+- Mettre l'option -T sur les commandes docker compose exec dans les scripts pour éviter que ça plante sous Windows.
+- Ajouter < /dev/null à la fin d'une commande Docker dans une boucle while pour l'empêcher de consommer les données du fichier texte en cours de lecture.
+- Séparer l'allumage des conteneurs (docker compose up -d mariadb puis dolibarr) permet de charger des données SQL sans que l'application ne vienne gêner.
+- Ne pas se fier au simple "docker compose up -d" : le conteneur est créé avant que le service soit prêt. Attendre la disponibilité de MariaDB avec une boucle until (SELECT 1) avant de restaurer la base.
+- Fixer la version de MariaDB (11.8) plutôt que d'utiliser latest, pour éviter les surprises entre deux machines ou deux dates d'installation.
+- Forcer les fins de ligne LF via .gitattributes pour que les scripts .sh restent exécutables sous Linux et dans les conteneurs, même quand le dépôt est cloné sous Windows.
+- Sous Windows, Docker Desktop nécessite WSL 2 : à installer et activer avant de lancer les scripts.
+- Lancer les scripts depuis la racine du dépôt (les chemins data/ et sources/ sont relatifs).
+
+# 4. Limites connues
+
+- Comme on a inséré les clients en SQL brut sans remplir tous les champs cachés de Dolibarr, l'interface web refuse de supprimer ces clients manuellement (il faut faire un DELETE en SQL).
+- L'exécution des scripts Bash nécessite Git Bash (ou WSL) sous Windows.
+- L'import natif de Dolibarr (menu Outils) n'est pas automatisable et pose des problèmes de correspondance de colonnes ; c'est pourquoi l'import est fait par script directement en base.
+- Le premier lancement de install.sh peut être long selon la machine (téléchargement des images Docker et création des conteneurs).
