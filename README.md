@@ -24,3 +24,22 @@ Le projet utilise 3 scripts Bash principaux rangés dans le dossier sources :
 - install.sh : Script de PRA qui monte l'infrastructure, restaure la base de données SQL, allume Dolibarr et lance l'importation CSV.
 
 Dolibarr est accessible depuis le navigateur sur http://localhost:8080 une fois les conteneurs lancés.
+
+## Importation et exportation manuelle
+
+En plus de l'automatisation avec les scripts, il est possible de gérer les données directement depuis l'interface web de Dolibarr (il faut d'abord activer le module "Import" et "Export" dans "Configuration" puis "Modules/Applications").
+
+1. Faire une importation
+Pour importer des données :
+- Aller dans le menu Outils > Nouvel import.
+- Choisir le jeu de données correspondant au besoin (par exemple : les Tiers pour les clients, ou les Utilisateurs pour les employés).
+- Uploader le fichier source au format .csv
+- Liaison des champs : Si ce n'est pas déjà fait, il faut associer manuellement chaque colonne du fichier (Nom, Adresse, Code postal, ...) au champ correspondant dans la base de données de Dolibarr.
+- Lancer la simulation (cela permet au système de vérifier qu'il n'y a pas d'erreurs de format avant de valider l'importation définitive) puis si il n'y a aucune erreur, valider l'importation.
+
+2. Faire une exportation
+Pour extraire des données du système :
+- Aller dans Outils > Nouvel export.
+- Sélectionner le jeu de données à récupérer (ex: liste des Tiers).
+- Choisir les champs spécifiques à inclure (on peut par exemple seulement sélectionner le nom et l'adresse mail des clients).
+- Une fois généré, Dolibarr crée et fait télécharger un fichier .csv contenant toutes les données formatées et prêtes à être utilisées sur un tableur par exemple.
