@@ -12,7 +12,10 @@
 - gitattributes : pour le format Linux
 
 ## Prérequis
-Utilisation de Docker pour la conteneurisation
+- Docker et Docker Compose : pour la conteneurisation de l'infrastructure.
+- MariaDB : version 11.8 (spécifiée dans le docker-compose).
+- Dolibarr : version latest (dernière version stable officielle de l'image).
+- Système d'exploitation : Compatible Windows (via Git Bash) ou Linux.
 
 ## Utilisation et plan de reprise d'activité
 L'installation est totalement automatisée via le script "install.sh". La commande suivante (à lancer à la racine du projet) permet de déployer l'infrastructure de zéro, restaurer la configuration de base de l'entreprise et importer les clients :
