@@ -96,6 +96,21 @@ Difficultés rencontrées :
 A faire à la prochaine séance :
 - [À compléter : finalisation du README, relecture, rendu final...]
 
+## Séance n° 6 date - heure : 06/10/2026 - 13h à 15h30
+
+Travail effectué :
+
+- Revue des scripts par rapport au cahier des charges du sujet (installation automatisée, import automatisé, dockerisation, sauvegarde et PRA).
+- Correction de import_csv.sh :
+ajout de set -e et set -o pipefail : si une insertion échoue ou si le CSV est introuvable, le script s'arrête et install.sh n'affiche plus "Succès !" à tort ;
+protection des apostrophes et des antislashs dans les valeurs avant de construire la requête SQL (un client comme "L'Atelier" cassait l'insertion) ;
+ajout d'une condition WHERE NOT EXISTS (même nom et même email) pour éviter les doublons quand install.sh restaure une sauvegarde déjà remplie puis relance l'import.
+- Correction de backup.sh :
+le dump est écrit dans un fichier temporaire data/sauvegarde.sql.tmp puis renommé en sauvegarde.sql seulement s'il a réussi, pour ne pas écraser l'ancienne sauvegarde en cas d'échec ;
+ajout de set -e et de l'option --single-transaction pour un export cohérent pendant que Dolibarr tourne.
+- Correction du nom du script d'import dans la documentation (import_csv.sh).
+- Tests : lancement de install.sh, connexion à Dolibarr et vérification des Tiers, exécution de backup.sh (fichier sauvegarde.sql de 827 Ko, non vide), puis test du PRA avec docker compose down -v suivi de install.sh : l'infrastructure et les données sont bien restaurées.
+
 # 3. Astuces techniques
 
 - Mettre l'option -T sur les commandes docker compose exec dans les scripts pour éviter que ça plante sous Windows.

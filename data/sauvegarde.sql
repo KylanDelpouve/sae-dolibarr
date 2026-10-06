@@ -1,9 +1,9 @@
 /*M!999999\- enable the sandbox mode */ 
--- MariaDB dump 10.20-13.0.2-MariaDB, for debian-linux-gnu (x86_64)
+-- MariaDB dump 10.20-11.8.9-MariaDB, for debian-linux-gnu (x86_64)
 --
 -- Host: localhost    Database: dolibarr
 -- ------------------------------------------------------
--- Server version	13.0.2-MariaDB-ubu2604
+-- Server version	11.8.9-MariaDB-ubu2404
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -1001,7 +1001,7 @@ SET @OLD_AUTOCOMMIT=@@AUTOCOMMIT, @@AUTOCOMMIT=0;
 LOCK TABLES `llx_adherent_type` WRITE;
 /*!40000 ALTER TABLE `llx_adherent_type` DISABLE KEYS */;
 INSERT INTO `llx_adherent_type` VALUES
-(1,1,'2026-09-23 07:33:58',1,'Type standard','','1y','1',NULL,0,NULL,'','1','','');
+(1,1,'2026-10-06 13:29:55',1,'Type standard','','1y','1',NULL,0,NULL,'','1','','');
 /*!40000 ALTER TABLE `llx_adherent_type` ENABLE KEYS */;
 UNLOCK TABLES;
 COMMIT;
@@ -2334,14 +2334,14 @@ SET @OLD_AUTOCOMMIT=@@AUTOCOMMIT, @@AUTOCOMMIT=0;
 LOCK TABLES `llx_boxes_def` WRITE;
 /*!40000 ALTER TABLE `llx_boxes_def` DISABLE KEYS */;
 INSERT INTO `llx_boxes_def` VALUES
-(1,'box_lastlogin.php',1,0,'2026-09-23 07:34:05',NULL),
-(2,'box_birthdays.php',1,0,'2026-09-23 07:34:05',NULL),
-(3,'box_dolibarr_state_board.php',1,0,'2026-09-23 07:34:05',NULL),
-(4,'box_clients.php',1,0,'2026-09-23 07:46:42',NULL),
-(5,'box_prospect.php',1,0,'2026-09-23 07:46:42',NULL),
-(6,'box_contacts.php',1,0,'2026-09-23 07:46:42',NULL),
-(7,'box_activity.php',1,0,'2026-09-23 07:46:42','(WarningUsingThisBoxSlowDown)'),
-(8,'box_goodcustomers.php',1,0,'2026-09-23 07:46:42','(WarningUsingThisBoxSlowDown)');
+(1,'box_lastlogin.php',1,0,'2026-10-06 13:30:06',NULL),
+(2,'box_birthdays.php',1,0,'2026-10-06 13:30:06',NULL),
+(3,'box_dolibarr_state_board.php',1,0,'2026-10-06 13:30:06',NULL),
+(4,'box_clients.php',1,0,'2026-10-06 13:34:24',NULL),
+(5,'box_prospect.php',1,0,'2026-10-06 13:34:24',NULL),
+(6,'box_contacts.php',1,0,'2026-10-06 13:34:24',NULL),
+(7,'box_activity.php',1,0,'2026-10-06 13:34:24','(WarningUsingThisBoxSlowDown)'),
+(8,'box_goodcustomers.php',1,0,'2026-10-06 13:34:24','(WarningUsingThisBoxSlowDown)');
 /*!40000 ALTER TABLE `llx_boxes_def` ENABLE KEYS */;
 UNLOCK TABLES;
 COMMIT;
@@ -4686,27 +4686,27 @@ SET @OLD_AUTOCOMMIT=@@AUTOCOMMIT, @@AUTOCOMMIT=0;
 LOCK TABLES `llx_c_email_templates` WRITE;
 /*!40000 ALTER TABLE `llx_c_email_templates` DISABLE KEYS */;
 INSERT INTO `llx_c_email_templates` VALUES
-(1,0,'banque','thirdparty','',0,NULL,NULL,'2026-09-23 07:34:00','(YourSEPAMandate)',1,0,'isModEnabled(\"societe\") && isModEnabled(\"bank\") && isModEnabled(\"prelevement\")',0,NULL,NULL,NULL,NULL,'__(YourSEPAMandate)__','0','__(Hello)__,<br><br>\n\n__(FindYourSEPAMandate)__ :<br>\n__MYCOMPANY_NAME__<br>\n__MYCOMPANY_FULLADDRESS__<br><br>\n__(Sincerely)__<br>\\__SENDEREMAIL_SIGNATURE__',NULL),
-(2,0,'adherent','member','',0,NULL,NULL,'2026-09-23 07:34:00','(SendingEmailOnAutoSubscription)',10,0,'isModEnabled(\"adherent\")',1,NULL,NULL,NULL,NULL,'[__[MAIN_INFO_SOCIETE_NOM]__] __(YourMembershipRequestWasReceived)__','0','__(Hello)__ __MEMBER_FULLNAME__,<br><br>\n\n__(ThisIsContentOfYourMembershipRequestWasReceived)__<br>\n<br>__ONLINE_PAYMENT_TEXT_AND_URL__<br>\n<br><br>\n__(Sincerely)__<br>__SENDEREMAIL_SIGNATURE__',NULL),
-(3,0,'adherent','member','',0,NULL,NULL,'2026-09-23 07:34:00','(SendingEmailOnMemberValidation)',20,0,'isModEnabled(\"adherent\")',1,NULL,NULL,NULL,NULL,'[__[MAIN_INFO_SOCIETE_NOM]__] __(YourMembershipWasValidated)__','0','__(Hello)__ __MEMBER_FULLNAME__,<br><br>\n\n__(ThisIsContentOfYourMembershipWasValidated)__<br>__(FirstName)__ : __MEMBER_FIRSTNAME__<br>__(LastName)__ : __MEMBER_LASTNAME__<br>__(ID)__ : __MEMBER_ID__<br>\n<br>__ONLINE_PAYMENT_TEXT_AND_URL__<br>\n<br><br>\n__(Sincerely)__<br>__SENDEREMAIL_SIGNATURE__',NULL),
-(4,0,'adherent','member','',0,NULL,NULL,'2026-09-23 07:34:00','(SendingEmailOnNewSubscription)',30,0,'isModEnabled(\"adherent\")',1,NULL,NULL,NULL,NULL,'[__[MAIN_INFO_SOCIETE_NOM]__] __(YourSubscriptionWasRecorded)__','1','__(Hello)__ __MEMBER_FULLNAME__,<br><br>\n\n__(ThisIsContentOfYourSubscriptionWasRecorded)__<br>\n\n<br><br>\n__(Sincerely)__<br>__SENDEREMAIL_SIGNATURE__',NULL),
-(5,0,'adherent','member','',0,NULL,NULL,'2026-09-23 07:34:00','(SendingReminderForExpiredSubscription)',40,0,'isModEnabled(\"adherent\")',1,NULL,NULL,NULL,NULL,'[__[MAIN_INFO_SOCIETE_NOM]__] __(SubscriptionReminderEmail)__','0','__(Hello)__ __MEMBER_FULLNAME__,<br><br>\n\n__(ThisIsContentOfSubscriptionReminderEmail)__<br>\n<br>__ONLINE_PAYMENT_TEXT_AND_URL__<br>\n<br><br>\n__(Sincerely)__<br>__SENDEREMAIL_SIGNATURE__',NULL),
-(6,0,'adherent','member','',0,NULL,NULL,'2026-09-23 07:34:00','(SendingEmailOnCancelation)',50,0,'isModEnabled(\"adherent\")',1,NULL,NULL,NULL,NULL,'[__[MAIN_INFO_SOCIETE_NOM]__] __(YourMembershipWasCanceled)__','0','__(Hello)__ __MEMBER_FULLNAME__,<br><br>\n\n__(YourMembershipWasCanceled)__<br>\n<br><br>\n__(Sincerely)__<br>__SENDEREMAIL_SIGNATURE__',NULL),
-(7,0,'adherent','member','',0,NULL,NULL,'2026-09-23 07:34:00','(SendingAnEMailToMember)',60,0,'isModEnabled(\"adherent\")',1,NULL,NULL,NULL,NULL,'[__[MAIN_INFO_SOCIETE_NOM]__] __(CardContent)__','0','__(Hello)__,<br><br>\n\n__(ThisIsContentOfYourCard)__<br>\n__(ID)__ : __ID__<br>\n__(Civility)__ : __MEMBER_CIVILITY__<br>\n__(Firstname)__ : __MEMBER_FIRSTNAME__<br>\n__(Lastname)__ : __MEMBER_LASTNAME__<br>\n__(Fullname)__ : __MEMBER_FULLNAME__<br>\n__(Company)__ : __MEMBER_COMPANY__<br>\n__(Address)__ : __MEMBER_ADDRESS__<br>\n__(Zip)__ : __MEMBER_ZIP__<br>\n__(Town)__ : __MEMBER_TOWN__<br>\n__(Country)__ : __MEMBER_COUNTRY__<br>\n__(Email)__ : __MEMBER_EMAIL__<br>\n__(Birthday)__ : __MEMBER_BIRTH__<br>\n__(Photo)__ : __MEMBER_PHOTO__<br>\n__(Login)__ : __MEMBER_LOGIN__<br>\n__(Phone)__ : __MEMBER_PHONE__<br>\n__(PhonePerso)__ : __MEMBER_PHONEPRO__<br>\n__(PhoneMobile)__ : __MEMBER_PHONEMOBILE__<br><br>\n__(Sincerely)__<br>__SENDEREMAIL_SIGNATURE__',NULL),
-(8,0,'recruitment','recruitmentcandidature_send','',0,NULL,NULL,'2026-09-23 07:34:00','(AnswerCandidature)',100,0,'isModEnabled(\"recruitment\")',1,NULL,NULL,NULL,NULL,'[__[MAIN_INFO_SOCIETE_NOM]__] __(YourCandidature)__','0','__(Hello)__ __CANDIDATE_FULLNAME__,<br><br>\n\n__(YourCandidatureAnswerMessage)__<br>__ONLINE_INTERVIEW_SCHEDULER_TEXT_AND_URL__\n<br><br>\n__(Sincerely)__<br>__SENDEREMAIL_SIGNATURE__',NULL),
-(9,0,'holiday','holiday','',0,NULL,NULL,'2026-09-23 07:34:00','(HolidayHrInformationsPreviousMonth)',100,0,'isModEnabled(\"holiday\")',1,NULL,NULL,NULL,NULL,'__(HolidayHrInformationsPreviousMonthTopic)__','0','__(Hello)__<br><br>__(HolidayHrInformationsPreviousMonthContent)__:<br>__HOLIDAY_ARRAY_PER_EMPLOYEE_FOR_PERIOD__<br><br>__SENDEREMAIL_SIGNATURE__',NULL),
-(10,0,'','conferenceorbooth','',0,NULL,NULL,'2026-09-23 07:34:00','(EventOrganizationEmailAskConf)',10,0,'1',1,NULL,NULL,NULL,NULL,'[__[MAIN_INFO_SOCIETE_NOM]__] __(EventOrganizationEmailAskConf)__',NULL,'__(Hello)__,<br /><br />__(OrganizationEventConfRequestWasReceived)__<br /><br /><br />__(Sincerely)__<br />__SENDEREMAIL_SIGNATURE__',NULL),
-(11,0,'','conferenceorbooth','',0,NULL,NULL,'2026-09-23 07:34:00','(EventOrganizationEmailAskBooth)',20,0,'1',1,NULL,NULL,NULL,NULL,'[__[MAIN_INFO_SOCIETE_NOM]__] __(EventOrganizationEmailAskBooth)__',NULL,'__(Hello)__,<br /><br />__(OrganizationEventBoothRequestWasReceived)__<br /><br /><br />__(Sincerely)__<br />__SENDEREMAIL_SIGNATURE__',NULL),
-(12,0,'','conferenceorbooth','',0,NULL,NULL,'2026-09-23 07:34:00','(EventOrganizationEmailBoothPayment)',30,0,'1',1,NULL,NULL,NULL,NULL,'[__[MAIN_INFO_SOCIETE_NOM]__] __(EventOrganizationEmailBoothPayment)__',NULL,'__(Hello)__,<br /><br />__(OrganizationEventPaymentOfBoothWasReceived)__<br /><br /><br />__(Sincerely)__<br />__SENDEREMAIL_SIGNATURE__',NULL),
-(13,0,'','conferenceorbooth','',0,NULL,NULL,'2026-09-23 07:34:00','(EventOrganizationEmailRegistrationPayment)',40,0,'1',1,NULL,NULL,NULL,NULL,'[__[MAIN_INFO_SOCIETE_NOM]__] __(EventOrganizationEmailRegistrationPayment)__',NULL,'__(Hello)__,<br /><br />__(OrganizationEventPaymentOfRegistrationWasReceived)__<br /><br />__(Sincerely)__<br />__SENDEREMAIL_SIGNATURE__',NULL),
-(14,0,'','conferenceorbooth','',0,NULL,NULL,'2026-09-23 07:34:00','(EventOrganizationMassEmailAttendees)',50,0,'1',1,NULL,NULL,NULL,NULL,'[__[MAIN_INFO_SOCIETE_NOM]__] __(EventOrganizationMassEmailAttendees)__',NULL,'__(Hello)__,<br /><br />__(OrganizationEventBulkMailToAttendees)__<br /><br />__(Sincerely)__<br />__SENDEREMAIL_SIGNATURE__',NULL),
-(15,0,'','conferenceorbooth','',0,NULL,NULL,'2026-09-23 07:34:00','(EventOrganizationMassEmailSpeakers)',60,0,'1',1,NULL,NULL,NULL,NULL,'[__[MAIN_INFO_SOCIETE_NOM]__] __(EventOrganizationMassEmailSpeakers)__',NULL,'__(Hello)__,<br /><br />__(OrganizationEventBulkMailToSpeakers)__<br /><br />__(Sincerely)__<br />__SENDEREMAIL_SIGNATURE__',NULL),
-(16,0,'partnership','partnership_send','',0,NULL,NULL,'2026-09-23 07:34:00','(SendingEmailOnPartnershipWillSoonBeCanceled)',100,0,'1',1,NULL,NULL,NULL,NULL,'[__[MAIN_INFO_SOCIETE_NOM]__] - __(YourPartnershipWillSoonBeCanceledTopic)__','0','<body>\n <p>__(Hello)__,<br><br>\n__(YourPartnershipWillSoonBeCanceledContent)__</p>\n<br />\n\n<br />\n\n            __(Sincerely)__ <br />\n            __[MAIN_INFO_SOCIETE_NOM]__ <br />\n </body>\n',NULL),
-(17,0,'partnership','partnership_send','',0,NULL,NULL,'2026-09-23 07:34:00','(SendingEmailOnPartnershipCanceled)',100,0,'1',1,NULL,NULL,NULL,NULL,'[__[MAIN_INFO_SOCIETE_NOM]__] - __(YourPartnershipCanceledTopic)__','0','<body>\n <p>__(Hello)__,<br><br>\n__(YourPartnershipCanceledContent)__</p>\n<br />\n\n<br />\n\n            __(Sincerely)__ <br />\n            __[MAIN_INFO_SOCIETE_NOM]__ <br />\n </body>\n',NULL),
-(18,0,'partnership','partnership_send','',0,NULL,NULL,'2026-09-23 07:34:00','(SendingEmailOnPartnershipRefused)',100,0,'1',1,NULL,NULL,NULL,NULL,'[__[MAIN_INFO_SOCIETE_NOM]__] - __(YourPartnershipRefusedTopic)__','0','<body>\n <p>__(Hello)__,<br><br>\n__(YourPartnershipRefusedContent)__</p>\n<br />\n\n<br />\n\n            __(Sincerely)__ <br />\n            __[MAIN_INFO_SOCIETE_NOM]__ <br />\n </body>\n',NULL),
-(19,0,'partnership','partnership_send','',0,NULL,NULL,'2026-09-23 07:34:00','(SendingEmailOnPartnershipAccepted)',100,0,'1',1,NULL,NULL,NULL,NULL,'[__[MAIN_INFO_SOCIETE_NOM]__] - __(YourPartnershipAcceptedTopic)__','0','<body>\n <p>__(Hello)__,<br><br>\n__(YourPartnershipAcceptedContent)__</p>\n<br />\n\n<br />\n\n            __(Sincerely)__ <br />\n            __[MAIN_INFO_SOCIETE_NOM]__ <br />\n </body>\n',NULL),
-(20,0,'supplier_invoice','invoice_supplier_send','',0,NULL,NULL,'2026-09-23 07:34:00','(SendingReminderEmailOnUnpaidSupplierInvoice)',100,0,'isModEnabled(\"supplier_invoice\")',1,NULL,NULL,NULL,NULL,'[__[MAIN_INFO_SOCIETE_NOM]__] - __(SupplierInvoice)__','0','__(Hello)__,<br /><br />__(SupplierInvoiceUnpaidContent)__<br />__URL_SUPPLIER_INVOICE__<br /><br />__(Sincerely)__<br />__SENDEREMAIL_SIGNATURE__',NULL),
-(21,0,'ticket','ticket_send','',0,NULL,NULL,'2026-09-23 07:34:00','(SendingAdminEmailMessage)',100,0,'isModEnabled(\"ticket\")',1,NULL,NULL,NULL,NULL,'[__[MAIN_INFO_SOCIETE_NOM]__] __TICKET_EMAIL_SUBJECT__','0','__TICKET_EMAIL_BODY__<br><ul><li>(Title) : __TICKET_SUBJECT__</li><li>(Type) : __TICKET_TYPE__</li><li>(TicketCategory) : __TICKET_CATEGORY__</li><li>(Severity) : __TICKET_SEVERITY__</li><li>(From) : __TICKET_USER_ASSIGN__</li><li>(Company) : __THIRDPARTY_NAME__</li></ul><p>(Message) : <br><br>__TICKET_MESSAGE__ </p><br><p><a href=\"__TICKET_URL__\">(SeeThisTicketIntomanagementInterface)</a></p>',NULL);
+(1,0,'banque','thirdparty','',0,NULL,NULL,'2026-10-06 13:29:57','(YourSEPAMandate)',1,0,'isModEnabled(\"societe\") && isModEnabled(\"bank\") && isModEnabled(\"prelevement\")',0,NULL,NULL,NULL,NULL,'__(YourSEPAMandate)__','0','__(Hello)__,<br><br>\n\n__(FindYourSEPAMandate)__ :<br>\n__MYCOMPANY_NAME__<br>\n__MYCOMPANY_FULLADDRESS__<br><br>\n__(Sincerely)__<br>\\__SENDEREMAIL_SIGNATURE__',NULL),
+(2,0,'adherent','member','',0,NULL,NULL,'2026-10-06 13:29:57','(SendingEmailOnAutoSubscription)',10,0,'isModEnabled(\"adherent\")',1,NULL,NULL,NULL,NULL,'[__[MAIN_INFO_SOCIETE_NOM]__] __(YourMembershipRequestWasReceived)__','0','__(Hello)__ __MEMBER_FULLNAME__,<br><br>\n\n__(ThisIsContentOfYourMembershipRequestWasReceived)__<br>\n<br>__ONLINE_PAYMENT_TEXT_AND_URL__<br>\n<br><br>\n__(Sincerely)__<br>__SENDEREMAIL_SIGNATURE__',NULL),
+(3,0,'adherent','member','',0,NULL,NULL,'2026-10-06 13:29:57','(SendingEmailOnMemberValidation)',20,0,'isModEnabled(\"adherent\")',1,NULL,NULL,NULL,NULL,'[__[MAIN_INFO_SOCIETE_NOM]__] __(YourMembershipWasValidated)__','0','__(Hello)__ __MEMBER_FULLNAME__,<br><br>\n\n__(ThisIsContentOfYourMembershipWasValidated)__<br>__(FirstName)__ : __MEMBER_FIRSTNAME__<br>__(LastName)__ : __MEMBER_LASTNAME__<br>__(ID)__ : __MEMBER_ID__<br>\n<br>__ONLINE_PAYMENT_TEXT_AND_URL__<br>\n<br><br>\n__(Sincerely)__<br>__SENDEREMAIL_SIGNATURE__',NULL),
+(4,0,'adherent','member','',0,NULL,NULL,'2026-10-06 13:29:57','(SendingEmailOnNewSubscription)',30,0,'isModEnabled(\"adherent\")',1,NULL,NULL,NULL,NULL,'[__[MAIN_INFO_SOCIETE_NOM]__] __(YourSubscriptionWasRecorded)__','1','__(Hello)__ __MEMBER_FULLNAME__,<br><br>\n\n__(ThisIsContentOfYourSubscriptionWasRecorded)__<br>\n\n<br><br>\n__(Sincerely)__<br>__SENDEREMAIL_SIGNATURE__',NULL),
+(5,0,'adherent','member','',0,NULL,NULL,'2026-10-06 13:29:57','(SendingReminderForExpiredSubscription)',40,0,'isModEnabled(\"adherent\")',1,NULL,NULL,NULL,NULL,'[__[MAIN_INFO_SOCIETE_NOM]__] __(SubscriptionReminderEmail)__','0','__(Hello)__ __MEMBER_FULLNAME__,<br><br>\n\n__(ThisIsContentOfSubscriptionReminderEmail)__<br>\n<br>__ONLINE_PAYMENT_TEXT_AND_URL__<br>\n<br><br>\n__(Sincerely)__<br>__SENDEREMAIL_SIGNATURE__',NULL),
+(6,0,'adherent','member','',0,NULL,NULL,'2026-10-06 13:29:57','(SendingEmailOnCancelation)',50,0,'isModEnabled(\"adherent\")',1,NULL,NULL,NULL,NULL,'[__[MAIN_INFO_SOCIETE_NOM]__] __(YourMembershipWasCanceled)__','0','__(Hello)__ __MEMBER_FULLNAME__,<br><br>\n\n__(YourMembershipWasCanceled)__<br>\n<br><br>\n__(Sincerely)__<br>__SENDEREMAIL_SIGNATURE__',NULL),
+(7,0,'adherent','member','',0,NULL,NULL,'2026-10-06 13:29:57','(SendingAnEMailToMember)',60,0,'isModEnabled(\"adherent\")',1,NULL,NULL,NULL,NULL,'[__[MAIN_INFO_SOCIETE_NOM]__] __(CardContent)__','0','__(Hello)__,<br><br>\n\n__(ThisIsContentOfYourCard)__<br>\n__(ID)__ : __ID__<br>\n__(Civility)__ : __MEMBER_CIVILITY__<br>\n__(Firstname)__ : __MEMBER_FIRSTNAME__<br>\n__(Lastname)__ : __MEMBER_LASTNAME__<br>\n__(Fullname)__ : __MEMBER_FULLNAME__<br>\n__(Company)__ : __MEMBER_COMPANY__<br>\n__(Address)__ : __MEMBER_ADDRESS__<br>\n__(Zip)__ : __MEMBER_ZIP__<br>\n__(Town)__ : __MEMBER_TOWN__<br>\n__(Country)__ : __MEMBER_COUNTRY__<br>\n__(Email)__ : __MEMBER_EMAIL__<br>\n__(Birthday)__ : __MEMBER_BIRTH__<br>\n__(Photo)__ : __MEMBER_PHOTO__<br>\n__(Login)__ : __MEMBER_LOGIN__<br>\n__(Phone)__ : __MEMBER_PHONE__<br>\n__(PhonePerso)__ : __MEMBER_PHONEPRO__<br>\n__(PhoneMobile)__ : __MEMBER_PHONEMOBILE__<br><br>\n__(Sincerely)__<br>__SENDEREMAIL_SIGNATURE__',NULL),
+(8,0,'recruitment','recruitmentcandidature_send','',0,NULL,NULL,'2026-10-06 13:29:57','(AnswerCandidature)',100,0,'isModEnabled(\"recruitment\")',1,NULL,NULL,NULL,NULL,'[__[MAIN_INFO_SOCIETE_NOM]__] __(YourCandidature)__','0','__(Hello)__ __CANDIDATE_FULLNAME__,<br><br>\n\n__(YourCandidatureAnswerMessage)__<br>__ONLINE_INTERVIEW_SCHEDULER_TEXT_AND_URL__\n<br><br>\n__(Sincerely)__<br>__SENDEREMAIL_SIGNATURE__',NULL),
+(9,0,'holiday','holiday','',0,NULL,NULL,'2026-10-06 13:29:57','(HolidayHrInformationsPreviousMonth)',100,0,'isModEnabled(\"holiday\")',1,NULL,NULL,NULL,NULL,'__(HolidayHrInformationsPreviousMonthTopic)__','0','__(Hello)__<br><br>__(HolidayHrInformationsPreviousMonthContent)__:<br>__HOLIDAY_ARRAY_PER_EMPLOYEE_FOR_PERIOD__<br><br>__SENDEREMAIL_SIGNATURE__',NULL),
+(10,0,'','conferenceorbooth','',0,NULL,NULL,'2026-10-06 13:29:57','(EventOrganizationEmailAskConf)',10,0,'1',1,NULL,NULL,NULL,NULL,'[__[MAIN_INFO_SOCIETE_NOM]__] __(EventOrganizationEmailAskConf)__',NULL,'__(Hello)__,<br /><br />__(OrganizationEventConfRequestWasReceived)__<br /><br /><br />__(Sincerely)__<br />__SENDEREMAIL_SIGNATURE__',NULL),
+(11,0,'','conferenceorbooth','',0,NULL,NULL,'2026-10-06 13:29:57','(EventOrganizationEmailAskBooth)',20,0,'1',1,NULL,NULL,NULL,NULL,'[__[MAIN_INFO_SOCIETE_NOM]__] __(EventOrganizationEmailAskBooth)__',NULL,'__(Hello)__,<br /><br />__(OrganizationEventBoothRequestWasReceived)__<br /><br /><br />__(Sincerely)__<br />__SENDEREMAIL_SIGNATURE__',NULL),
+(12,0,'','conferenceorbooth','',0,NULL,NULL,'2026-10-06 13:29:57','(EventOrganizationEmailBoothPayment)',30,0,'1',1,NULL,NULL,NULL,NULL,'[__[MAIN_INFO_SOCIETE_NOM]__] __(EventOrganizationEmailBoothPayment)__',NULL,'__(Hello)__,<br /><br />__(OrganizationEventPaymentOfBoothWasReceived)__<br /><br /><br />__(Sincerely)__<br />__SENDEREMAIL_SIGNATURE__',NULL),
+(13,0,'','conferenceorbooth','',0,NULL,NULL,'2026-10-06 13:29:57','(EventOrganizationEmailRegistrationPayment)',40,0,'1',1,NULL,NULL,NULL,NULL,'[__[MAIN_INFO_SOCIETE_NOM]__] __(EventOrganizationEmailRegistrationPayment)__',NULL,'__(Hello)__,<br /><br />__(OrganizationEventPaymentOfRegistrationWasReceived)__<br /><br />__(Sincerely)__<br />__SENDEREMAIL_SIGNATURE__',NULL),
+(14,0,'','conferenceorbooth','',0,NULL,NULL,'2026-10-06 13:29:57','(EventOrganizationMassEmailAttendees)',50,0,'1',1,NULL,NULL,NULL,NULL,'[__[MAIN_INFO_SOCIETE_NOM]__] __(EventOrganizationMassEmailAttendees)__',NULL,'__(Hello)__,<br /><br />__(OrganizationEventBulkMailToAttendees)__<br /><br />__(Sincerely)__<br />__SENDEREMAIL_SIGNATURE__',NULL),
+(15,0,'','conferenceorbooth','',0,NULL,NULL,'2026-10-06 13:29:57','(EventOrganizationMassEmailSpeakers)',60,0,'1',1,NULL,NULL,NULL,NULL,'[__[MAIN_INFO_SOCIETE_NOM]__] __(EventOrganizationMassEmailSpeakers)__',NULL,'__(Hello)__,<br /><br />__(OrganizationEventBulkMailToSpeakers)__<br /><br />__(Sincerely)__<br />__SENDEREMAIL_SIGNATURE__',NULL),
+(16,0,'partnership','partnership_send','',0,NULL,NULL,'2026-10-06 13:29:57','(SendingEmailOnPartnershipWillSoonBeCanceled)',100,0,'1',1,NULL,NULL,NULL,NULL,'[__[MAIN_INFO_SOCIETE_NOM]__] - __(YourPartnershipWillSoonBeCanceledTopic)__','0','<body>\n <p>__(Hello)__,<br><br>\n__(YourPartnershipWillSoonBeCanceledContent)__</p>\n<br />\n\n<br />\n\n            __(Sincerely)__ <br />\n            __[MAIN_INFO_SOCIETE_NOM]__ <br />\n </body>\n',NULL),
+(17,0,'partnership','partnership_send','',0,NULL,NULL,'2026-10-06 13:29:57','(SendingEmailOnPartnershipCanceled)',100,0,'1',1,NULL,NULL,NULL,NULL,'[__[MAIN_INFO_SOCIETE_NOM]__] - __(YourPartnershipCanceledTopic)__','0','<body>\n <p>__(Hello)__,<br><br>\n__(YourPartnershipCanceledContent)__</p>\n<br />\n\n<br />\n\n            __(Sincerely)__ <br />\n            __[MAIN_INFO_SOCIETE_NOM]__ <br />\n </body>\n',NULL),
+(18,0,'partnership','partnership_send','',0,NULL,NULL,'2026-10-06 13:29:57','(SendingEmailOnPartnershipRefused)',100,0,'1',1,NULL,NULL,NULL,NULL,'[__[MAIN_INFO_SOCIETE_NOM]__] - __(YourPartnershipRefusedTopic)__','0','<body>\n <p>__(Hello)__,<br><br>\n__(YourPartnershipRefusedContent)__</p>\n<br />\n\n<br />\n\n            __(Sincerely)__ <br />\n            __[MAIN_INFO_SOCIETE_NOM]__ <br />\n </body>\n',NULL),
+(19,0,'partnership','partnership_send','',0,NULL,NULL,'2026-10-06 13:29:57','(SendingEmailOnPartnershipAccepted)',100,0,'1',1,NULL,NULL,NULL,NULL,'[__[MAIN_INFO_SOCIETE_NOM]__] - __(YourPartnershipAcceptedTopic)__','0','<body>\n <p>__(Hello)__,<br><br>\n__(YourPartnershipAcceptedContent)__</p>\n<br />\n\n<br />\n\n            __(Sincerely)__ <br />\n            __[MAIN_INFO_SOCIETE_NOM]__ <br />\n </body>\n',NULL),
+(20,0,'supplier_invoice','invoice_supplier_send','',0,NULL,NULL,'2026-10-06 13:29:57','(SendingReminderEmailOnUnpaidSupplierInvoice)',100,0,'isModEnabled(\"supplier_invoice\")',1,NULL,NULL,NULL,NULL,'[__[MAIN_INFO_SOCIETE_NOM]__] - __(SupplierInvoice)__','0','__(Hello)__,<br /><br />__(SupplierInvoiceUnpaidContent)__<br />__URL_SUPPLIER_INVOICE__<br /><br />__(Sincerely)__<br />__SENDEREMAIL_SIGNATURE__',NULL),
+(21,0,'ticket','ticket_send','',0,NULL,NULL,'2026-10-06 13:29:57','(SendingAdminEmailMessage)',100,0,'isModEnabled(\"ticket\")',1,NULL,NULL,NULL,NULL,'[__[MAIN_INFO_SOCIETE_NOM]__] __TICKET_EMAIL_SUBJECT__','0','__TICKET_EMAIL_BODY__<br><ul><li>(Title) : __TICKET_SUBJECT__</li><li>(Type) : __TICKET_TYPE__</li><li>(TicketCategory) : __TICKET_CATEGORY__</li><li>(Severity) : __TICKET_SEVERITY__</li><li>(From) : __TICKET_USER_ASSIGN__</li><li>(Company) : __THIRDPARTY_NAME__</li></ul><p>(Message) : <br><br>__TICKET_MESSAGE__ </p><br><p><a href=\"__TICKET_URL__\">(SeeThisTicketIntomanagementInterface)</a></p>',NULL);
 /*!40000 ALTER TABLE `llx_c_email_templates` ENABLE KEYS */;
 UNLOCK TABLES;
 COMMIT;
@@ -6670,20 +6670,20 @@ SET @OLD_AUTOCOMMIT=@@AUTOCOMMIT, @@AUTOCOMMIT=0;
 LOCK TABLES `llx_c_shipment_mode` WRITE;
 /*!40000 ALTER TABLE `llx_c_shipment_mode` DISABLE KEYS */;
 INSERT INTO `llx_c_shipment_mode` VALUES
-(1,1,'2026-09-23 07:34:02','CATCH','In-Store Collection','In-store collection by the customer','',1,NULL),
-(2,1,'2026-09-23 07:34:02','TRANS','Generic transport service','Generic transport service','',1,NULL),
-(3,1,'2026-09-23 07:34:02','COLSUI','Colissimo Suivi','Colissimo Suivi','https://www.laposte.fr/outils/suivre-vos-envois?code={TRACKID}',0,NULL),
-(4,1,'2026-09-23 07:34:02','LETTREMAX','Lettre Max','Courrier Suivi et Lettre Max','https://www.laposte.fr/outils/suivre-vos-envois?code={TRACKID}',0,NULL),
-(5,1,'2026-09-23 07:34:02','UPS','UPS','United Parcel Service','http://wwwapps.ups.com/etracking/tracking.cgi?InquiryNumber2=&InquiryNumber3=&tracknums_displayed=3&loc=fr_FR&TypeOfInquiryNumber=T&HTMLVersion=4.0&InquiryNumber22=&InquiryNumber32=&track=Track&Suivi.x=64&Suivi.y=7&Suivi=Valider&InquiryNumber1={TRACKID}',1,NULL),
-(6,1,'2026-09-23 07:34:02','KIALA','KIALA','Relais Kiala','http://www.kiala.fr/tnt/delivery/{TRACKID}',0,NULL),
-(7,1,'2026-09-23 07:34:02','GLS','GLS','General Logistics Systems','https://gls-group.eu/FR/fr/suivi-colis?match={TRACKID}',0,NULL),
-(8,1,'2026-09-23 07:34:02','CHRONO','Chronopost','Chronopost','http://www.chronopost.fr/expedier/inputLTNumbersNoJahia.do?listeNumeros={TRACKID}',0,NULL),
-(9,1,'2026-09-23 07:34:02','INPERSON','In person at your site',NULL,NULL,0,NULL),
-(10,1,'2026-09-23 07:34:02','FEDEX','Fedex',NULL,'https://www.fedex.com/apps/fedextrack/index.html?tracknumbers={TRACKID}',0,NULL),
-(11,1,'2026-09-23 07:34:02','TNT','TNT',NULL,'https://www.tnt.com/express/fr_fr/site/outils-expedition/suivi.html?searchType=con&cons=={TRACKID}',0,NULL),
-(12,1,'2026-09-23 07:34:02','DHL','DHL',NULL,'https://www.dhl.com/fr-fr/home/tracking/tracking-global-forwarding.html?submit=1&tracking-id={TRACKID}',0,NULL),
-(13,1,'2026-09-23 07:34:02','DPD','DPD',NULL,'https://www.dpd.fr/trace/{TRACKID}',0,NULL),
-(14,1,'2026-09-23 07:34:02','MAINFREIGHT','Mainfreight',NULL,'https://www.mainfreight.com/track?{TRACKID}',0,NULL);
+(1,1,'2026-10-06 13:30:02','CATCH','In-Store Collection','In-store collection by the customer','',1,NULL),
+(2,1,'2026-10-06 13:30:02','TRANS','Generic transport service','Generic transport service','',1,NULL),
+(3,1,'2026-10-06 13:30:02','COLSUI','Colissimo Suivi','Colissimo Suivi','https://www.laposte.fr/outils/suivre-vos-envois?code={TRACKID}',0,NULL),
+(4,1,'2026-10-06 13:30:02','LETTREMAX','Lettre Max','Courrier Suivi et Lettre Max','https://www.laposte.fr/outils/suivre-vos-envois?code={TRACKID}',0,NULL),
+(5,1,'2026-10-06 13:30:02','UPS','UPS','United Parcel Service','http://wwwapps.ups.com/etracking/tracking.cgi?InquiryNumber2=&InquiryNumber3=&tracknums_displayed=3&loc=fr_FR&TypeOfInquiryNumber=T&HTMLVersion=4.0&InquiryNumber22=&InquiryNumber32=&track=Track&Suivi.x=64&Suivi.y=7&Suivi=Valider&InquiryNumber1={TRACKID}',1,NULL),
+(6,1,'2026-10-06 13:30:02','KIALA','KIALA','Relais Kiala','http://www.kiala.fr/tnt/delivery/{TRACKID}',0,NULL),
+(7,1,'2026-10-06 13:30:02','GLS','GLS','General Logistics Systems','https://gls-group.eu/FR/fr/suivi-colis?match={TRACKID}',0,NULL),
+(8,1,'2026-10-06 13:30:02','CHRONO','Chronopost','Chronopost','http://www.chronopost.fr/expedier/inputLTNumbersNoJahia.do?listeNumeros={TRACKID}',0,NULL),
+(9,1,'2026-10-06 13:30:02','INPERSON','In person at your site',NULL,NULL,0,NULL),
+(10,1,'2026-10-06 13:30:02','FEDEX','Fedex',NULL,'https://www.fedex.com/apps/fedextrack/index.html?tracknumbers={TRACKID}',0,NULL),
+(11,1,'2026-10-06 13:30:02','TNT','TNT',NULL,'https://www.tnt.com/express/fr_fr/site/outils-expedition/suivi.html?searchType=con&cons=={TRACKID}',0,NULL),
+(12,1,'2026-10-06 13:30:02','DHL','DHL',NULL,'https://www.dhl.com/fr-fr/home/tracking/tracking-global-forwarding.html?submit=1&tracking-id={TRACKID}',0,NULL),
+(13,1,'2026-10-06 13:30:02','DPD','DPD',NULL,'https://www.dpd.fr/trace/{TRACKID}',0,NULL),
+(14,1,'2026-10-06 13:30:02','MAINFREIGHT','Mainfreight',NULL,'https://www.mainfreight.com/track?{TRACKID}',0,NULL);
 /*!40000 ALTER TABLE `llx_c_shipment_mode` ENABLE KEYS */;
 UNLOCK TABLES;
 COMMIT;
@@ -9131,7 +9131,7 @@ CREATE TABLE `llx_const` (
   `tms` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   PRIMARY KEY (`rowid`),
   UNIQUE KEY `uk_const` (`name`,`entity`)
-) ENGINE=InnoDB AUTO_INCREMENT=64 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=66 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -9142,63 +9142,63 @@ SET @OLD_AUTOCOMMIT=@@AUTOCOMMIT, @@AUTOCOMMIT=0;
 LOCK TABLES `llx_const` WRITE;
 /*!40000 ALTER TABLE `llx_const` DISABLE KEYS */;
 INSERT INTO `llx_const` VALUES
-(2,'MAIN_FEATURES_LEVEL',1,'0','chaine',1,'Level of features to show: -1=stable+deprecated, 0=stable only (default), 1=stable+experimental, 2=stable+experimental+development','2026-09-23 07:34:04'),
-(3,'SYSLOG_HANDLERS',0,'[\"mod_syslog_file\"]','chaine',0,'Which logger to use','2026-09-23 07:34:04'),
-(4,'SYSLOG_FILE',0,'DOL_DATA_ROOT/dolibarr.log','chaine',0,'Directory where to write log file','2026-09-23 07:34:04'),
-(5,'SYSLOG_LEVEL',0,'7','chaine',0,'Level of debug info to show','2026-09-23 07:34:04'),
-(6,'MAILING_LIMIT_SENDBYWEB',0,'25','chaine',0,'Number of targets to defined packet size when sending mass email','2026-09-23 07:34:04'),
-(7,'MAIN_UPLOAD_DOC',1,'2048','chaine',0,'Max size for file upload (0 means no upload allowed)','2026-09-23 07:34:04'),
-(8,'MAIN_ENABLE_OVERWRITE_TRANSLATION',1,'1','chaine',0,'Enable translation overwrite','2026-09-23 07:34:04'),
-(9,'MAIN_ENABLE_DEFAULT_VALUES',1,'1','chaine',0,'Enable default value overwrite','2026-09-23 07:34:04'),
-(11,'MAIN_MAIL_SMTP_SERVER',1,'','chaine',0,'Host or ip address for SMTP server','2026-09-23 07:34:04'),
-(12,'MAIN_MAIL_SMTP_PORT',1,'','chaine',0,'Port for SMTP server','2026-09-23 07:34:04'),
-(13,'MAIN_MAIL_EMAIL_FROM',1,'robot@domain.com','chaine',0,'email emitter for Dolibarr automatic emails','2026-09-23 07:34:04'),
-(14,'MAIN_SIZE_SHORTLIST_LIMIT',1,'3','chaine',0,'Maximum length of short lists','2026-09-23 07:34:04'),
-(15,'MAIN_MENU_STANDARD',1,'eldy_menu.php','chaine',0,'Menu manager for internal users','2026-09-23 07:34:04'),
-(16,'MAIN_MENUFRONT_STANDARD',1,'eldy_menu.php','chaine',0,'Menu manager for external users','2026-09-23 07:34:04'),
-(17,'MAIN_MENU_SMARTPHONE',1,'eldy_menu.php','chaine',0,'Menu manager for internal users using smartphones','2026-09-23 07:34:04'),
-(18,'MAIN_MENUFRONT_SMARTPHONE',1,'eldy_menu.php','chaine',0,'Menu manager for external users using smartphones','2026-09-23 07:34:04'),
-(19,'THEME_ELDY_USEBORDERONTABLE',1,'1','chaine',0,'Enable the border in theme','2026-09-23 07:34:04'),
-(20,'MAIN_DELAY_ACTIONS_TODO',1,'7','chaine',0,'TolÃ©rance de retard avant alerte (en jours) sur actions planifiÃ©es non rÃ©alisÃ©es','2026-09-23 07:34:04'),
-(21,'MAIN_DELAY_ORDERS_TO_PROCESS',1,'2','chaine',0,'TolÃ©rance de retard avant alerte (en jours) sur commandes clients non traitÃ©es','2026-09-23 07:34:04'),
-(22,'MAIN_DELAY_SUPPLIER_ORDERS_TO_PROCESS',1,'7','chaine',0,'TolÃ©rance de retard avant alerte (en jours) sur commandes fournisseurs non traitÃ©es','2026-09-23 07:34:04'),
-(23,'MAIN_DELAY_PROPALS_TO_CLOSE',1,'31','chaine',0,'TolÃ©rance de retard avant alerte (en jours) sur propales Ã  cloturer','2026-09-23 07:34:04'),
-(24,'MAIN_DELAY_PROPALS_TO_BILL',1,'7','chaine',0,'TolÃ©rance de retard avant alerte (en jours) sur propales non facturÃ©es','2026-09-23 07:34:04'),
-(25,'MAIN_DELAY_CUSTOMER_BILLS_UNPAYED',1,'31','chaine',0,'TolÃ©rance de retard avant alerte (en jours) sur factures client impayÃ©es','2026-09-23 07:34:04'),
-(26,'MAIN_DELAY_SUPPLIER_BILLS_TO_PAY',1,'2','chaine',0,'TolÃ©rance de retard avant alerte (en jours) sur factures fournisseur impayÃ©es','2026-09-23 07:34:04'),
-(27,'MAIN_DELAY_NOT_ACTIVATED_SERVICES',1,'0','chaine',0,'TolÃ©rance de retard avant alerte (en jours) sur services Ã  activer','2026-09-23 07:34:04'),
-(28,'MAIN_DELAY_RUNNING_SERVICES',1,'0','chaine',0,'TolÃ©rance de retard avant alerte (en jours) sur services expirÃ©s','2026-09-23 07:34:04'),
-(29,'MAIN_DELAY_MEMBERS',1,'31','chaine',0,'TolÃ©rance de retard avant alerte (en jours) sur cotisations adhÃ©rent en retard','2026-09-23 07:34:04'),
-(30,'MAIN_DELAY_TRANSACTIONS_TO_CONCILIATE',1,'62','chaine',0,'TolÃ©rance de retard avant alerte (en jours) sur rapprochements bancaires Ã  faire','2026-09-23 07:34:04'),
-(31,'MAIN_DELAY_EXPENSEREPORTS_TO_PAY',1,'31','chaine',0,'TolÃ©rance de retard avant alerte (en jours) sur les notes de frais impayÃ©es','2026-09-23 07:34:04'),
-(32,'MAILING_EMAIL_FROM',1,'no-reply@mydomain.tld','chaine',0,'EMail emmetteur pour les envois d emailings','2026-09-23 07:34:04'),
-(33,'PRODUCT_ADDON_PDF_ODT_PATH',1,'DOL_DATA_ROOT/doctemplates/products','chaine',0,NULL,'2026-09-23 07:34:04'),
-(34,'CONTRACT_ADDON_PDF_ODT_PATH',1,'DOL_DATA_ROOT/doctemplates/contracts','chaine',0,NULL,'2026-09-23 07:34:04'),
-(35,'USERGROUP_ADDON_PDF_ODT_PATH',1,'DOL_DATA_ROOT/doctemplates/usergroups','chaine',0,NULL,'2026-09-23 07:34:04'),
-(36,'USER_ADDON_PDF_ODT_PATH',1,'DOL_DATA_ROOT/doctemplates/users','chaine',0,NULL,'2026-09-23 07:34:04'),
-(37,'PRODUCT_PRICE_BASE_TYPE',1,'HT','string',0,NULL,'2026-09-23 07:34:04'),
-(38,'ADHERENT_LOGIN_NOT_REQUIRED',1,'1','string',0,NULL,'2026-09-23 07:34:04'),
-(39,'MAIN_VERSION_LAST_INSTALL',0,'24.0.0','chaine',0,'Dolibarr version when install','2026-09-23 07:34:05'),
-(40,'MAIN_LANG_DEFAULT',1,'auto','chaine',0,'Default language','2026-09-23 07:34:05'),
-(41,'SYSTEMTOOLS_MYSQLDUMP',0,'/usr/bin/mysqldump','chaine',0,'','2026-09-23 07:34:05'),
-(42,'MAIN_MODULE_USER',0,'1','string',0,'{\"authorid\":0,\"ip\":\"\",\"lastactivationversion\":\"dolibarr\"}','2026-09-23 07:34:05'),
-(43,'MAIN_PROFID1_IN_ADDRESS',1,'1','chaine',0,'','2026-09-23 07:39:21'),
-(48,'MAIN_INFO_SOCIETE_COUNTRY',1,'1:FR:France','chaine',0,'','2026-09-23 07:45:57'),
-(49,'MAIN_INFO_SOCIETE_NOM',1,'SAE52','chaine',0,'','2026-09-23 07:45:57'),
-(50,'MAIN_INFO_SOCIETE_ADDRESS',1,'24 Cr Gambetta','chaine',0,'','2026-09-23 07:45:57'),
-(51,'MAIN_INFO_SOCIETE_TOWN',1,'Elbeuf','chaine',0,'','2026-09-23 07:45:57'),
-(52,'MAIN_INFO_SOCIETE_ZIP',1,'76500','chaine',0,'','2026-09-23 07:45:57'),
-(53,'MAIN_MONNAIE',1,'EUR','chaine',0,'','2026-09-23 07:45:57'),
-(54,'MAIN_INFO_SOCIETE_FORME_JURIDIQUE',1,'0','chaine',0,'','2026-09-23 07:45:57'),
-(55,'SOCIETE_FISCAL_MONTH_START',1,'1','chaine',0,'','2026-09-23 07:45:57'),
-(56,'FACTURE_TVAOPTION',1,'1','chaine',0,'','2026-09-23 07:45:57'),
-(57,'MAIN_MODULE_SOCIETE',1,'1','string',0,'{\"authorid\":\"1\",\"ip\":\"172.18.0.1\",\"lastactivationversion\":\"dolibarr\"}','2026-09-23 07:46:42'),
-(58,'SOCIETE_CODECLIENT_ADDON',1,'mod_codeclient_monkey','chaine',0,'Module to control third parties codes','2026-09-23 07:46:42'),
-(59,'SOCIETE_CODECOMPTA_ADDON',1,'mod_codecompta_panicum','chaine',0,'Module to control third parties codes','2026-09-23 07:46:42'),
-(60,'COMPANY_ADDON_PDF_ODT_PATH',1,'DOL_DATA_ROOT/doctemplates/thirdparties','chaine',0,NULL,'2026-09-23 07:46:42'),
-(61,'SOCIETE_ADD_REF_IN_LIST',1,'0','yesno',0,'Display customer ref into select list','2026-09-23 07:46:42'),
-(62,'MAIN_IHM_PARAMS_REV',1,'1','chaine',0,'','2026-09-23 07:46:42'),
-(63,'MAIN_LAST_PING_KO_DATE',1,'20260924110959','chaine',0,'','2026-09-24 11:09:59');
+(2,'MAIN_FEATURES_LEVEL',1,'0','chaine',1,'Level of features to show: -1=stable+deprecated, 0=stable only (default), 1=stable+experimental, 2=stable+experimental+development','2026-10-06 13:30:05'),
+(3,'SYSLOG_HANDLERS',0,'[\"mod_syslog_file\"]','chaine',0,'Which logger to use','2026-10-06 13:30:05'),
+(4,'SYSLOG_FILE',0,'DOL_DATA_ROOT/dolibarr.log','chaine',0,'Directory where to write log file','2026-10-06 13:30:05'),
+(5,'SYSLOG_LEVEL',0,'7','chaine',0,'Level of debug info to show','2026-10-06 13:30:05'),
+(6,'MAILING_LIMIT_SENDBYWEB',0,'25','chaine',0,'Number of targets to defined packet size when sending mass email','2026-10-06 13:30:05'),
+(7,'MAIN_UPLOAD_DOC',1,'2048','chaine',0,'Max size for file upload (0 means no upload allowed)','2026-10-06 13:30:05'),
+(8,'MAIN_ENABLE_OVERWRITE_TRANSLATION',1,'1','chaine',0,'Enable translation overwrite','2026-10-06 13:30:05'),
+(9,'MAIN_ENABLE_DEFAULT_VALUES',1,'1','chaine',0,'Enable default value overwrite','2026-10-06 13:30:05'),
+(11,'MAIN_MAIL_SMTP_SERVER',1,'','chaine',0,'Host or ip address for SMTP server','2026-10-06 13:30:05'),
+(12,'MAIN_MAIL_SMTP_PORT',1,'','chaine',0,'Port for SMTP server','2026-10-06 13:30:05'),
+(13,'MAIN_MAIL_EMAIL_FROM',1,'robot@domain.com','chaine',0,'email emitter for Dolibarr automatic emails','2026-10-06 13:30:05'),
+(14,'MAIN_SIZE_SHORTLIST_LIMIT',1,'3','chaine',0,'Maximum length of short lists','2026-10-06 13:30:05'),
+(15,'MAIN_MENU_STANDARD',1,'eldy_menu.php','chaine',0,'Menu manager for internal users','2026-10-06 13:30:05'),
+(16,'MAIN_MENUFRONT_STANDARD',1,'eldy_menu.php','chaine',0,'Menu manager for external users','2026-10-06 13:30:05'),
+(17,'MAIN_MENU_SMARTPHONE',1,'eldy_menu.php','chaine',0,'Menu manager for internal users using smartphones','2026-10-06 13:30:05'),
+(18,'MAIN_MENUFRONT_SMARTPHONE',1,'eldy_menu.php','chaine',0,'Menu manager for external users using smartphones','2026-10-06 13:30:05'),
+(19,'THEME_ELDY_USEBORDERONTABLE',1,'1','chaine',0,'Enable the border in theme','2026-10-06 13:30:05'),
+(20,'MAIN_DELAY_ACTIONS_TODO',1,'7','chaine',0,'TolÃ©rance de retard avant alerte (en jours) sur actions planifiÃ©es non rÃ©alisÃ©es','2026-10-06 13:30:05'),
+(21,'MAIN_DELAY_ORDERS_TO_PROCESS',1,'2','chaine',0,'TolÃ©rance de retard avant alerte (en jours) sur commandes clients non traitÃ©es','2026-10-06 13:30:05'),
+(22,'MAIN_DELAY_SUPPLIER_ORDERS_TO_PROCESS',1,'7','chaine',0,'TolÃ©rance de retard avant alerte (en jours) sur commandes fournisseurs non traitÃ©es','2026-10-06 13:30:05'),
+(23,'MAIN_DELAY_PROPALS_TO_CLOSE',1,'31','chaine',0,'TolÃ©rance de retard avant alerte (en jours) sur propales Ã  cloturer','2026-10-06 13:30:05'),
+(24,'MAIN_DELAY_PROPALS_TO_BILL',1,'7','chaine',0,'TolÃ©rance de retard avant alerte (en jours) sur propales non facturÃ©es','2026-10-06 13:30:05'),
+(25,'MAIN_DELAY_CUSTOMER_BILLS_UNPAYED',1,'31','chaine',0,'TolÃ©rance de retard avant alerte (en jours) sur factures client impayÃ©es','2026-10-06 13:30:05'),
+(26,'MAIN_DELAY_SUPPLIER_BILLS_TO_PAY',1,'2','chaine',0,'TolÃ©rance de retard avant alerte (en jours) sur factures fournisseur impayÃ©es','2026-10-06 13:30:05'),
+(27,'MAIN_DELAY_NOT_ACTIVATED_SERVICES',1,'0','chaine',0,'TolÃ©rance de retard avant alerte (en jours) sur services Ã  activer','2026-10-06 13:30:05'),
+(28,'MAIN_DELAY_RUNNING_SERVICES',1,'0','chaine',0,'TolÃ©rance de retard avant alerte (en jours) sur services expirÃ©s','2026-10-06 13:30:05'),
+(29,'MAIN_DELAY_MEMBERS',1,'31','chaine',0,'TolÃ©rance de retard avant alerte (en jours) sur cotisations adhÃ©rent en retard','2026-10-06 13:30:05'),
+(30,'MAIN_DELAY_TRANSACTIONS_TO_CONCILIATE',1,'62','chaine',0,'TolÃ©rance de retard avant alerte (en jours) sur rapprochements bancaires Ã  faire','2026-10-06 13:30:05'),
+(31,'MAIN_DELAY_EXPENSEREPORTS_TO_PAY',1,'31','chaine',0,'TolÃ©rance de retard avant alerte (en jours) sur les notes de frais impayÃ©es','2026-10-06 13:30:05'),
+(32,'MAILING_EMAIL_FROM',1,'no-reply@mydomain.tld','chaine',0,'EMail emmetteur pour les envois d emailings','2026-10-06 13:30:05'),
+(33,'PRODUCT_ADDON_PDF_ODT_PATH',1,'DOL_DATA_ROOT/doctemplates/products','chaine',0,NULL,'2026-10-06 13:30:05'),
+(34,'CONTRACT_ADDON_PDF_ODT_PATH',1,'DOL_DATA_ROOT/doctemplates/contracts','chaine',0,NULL,'2026-10-06 13:30:05'),
+(35,'USERGROUP_ADDON_PDF_ODT_PATH',1,'DOL_DATA_ROOT/doctemplates/usergroups','chaine',0,NULL,'2026-10-06 13:30:05'),
+(36,'USER_ADDON_PDF_ODT_PATH',1,'DOL_DATA_ROOT/doctemplates/users','chaine',0,NULL,'2026-10-06 13:30:05'),
+(37,'PRODUCT_PRICE_BASE_TYPE',1,'HT','string',0,NULL,'2026-10-06 13:30:05'),
+(38,'ADHERENT_LOGIN_NOT_REQUIRED',1,'1','string',0,NULL,'2026-10-06 13:30:05'),
+(39,'MAIN_VERSION_LAST_INSTALL',0,'24.0.0','chaine',0,'Dolibarr version when install','2026-10-06 13:30:05'),
+(40,'MAIN_LANG_DEFAULT',1,'auto','chaine',0,'Default language','2026-10-06 13:30:06'),
+(41,'SYSTEMTOOLS_MYSQLDUMP',0,'/usr/bin/mysqldump','chaine',0,'','2026-10-06 13:30:06'),
+(42,'MAIN_MODULE_USER',0,'1','string',0,'{\"authorid\":0,\"ip\":\"\",\"lastactivationversion\":\"dolibarr\"}','2026-10-06 13:30:06'),
+(43,'MAIN_MODULE_IMPORT',1,'1','string',0,'{\"authorid\":\"1\",\"ip\":\"172.18.0.1\",\"lastactivationversion\":\"dolibarr\"}','2026-10-06 13:32:08'),
+(45,'MAIN_MODULE_EXPORT',1,'1','string',0,'{\"authorid\":\"1\",\"ip\":\"172.18.0.1\",\"lastactivationversion\":\"dolibarr\"}','2026-10-06 13:32:15'),
+(47,'MAIN_PROFID1_IN_ADDRESS',1,'1','chaine',0,'','2026-10-06 13:32:46'),
+(52,'MAIN_INFO_SOCIETE_COUNTRY',1,'1:FR:France','chaine',0,'','2026-10-06 13:33:16'),
+(53,'MAIN_INFO_SOCIETE_NOM',1,'test','chaine',0,'','2026-10-06 13:33:16'),
+(54,'MAIN_MONNAIE',1,'EUR','chaine',0,'','2026-10-06 13:33:16'),
+(55,'MAIN_INFO_SOCIETE_FORME_JURIDIQUE',1,'0','chaine',0,'','2026-10-06 13:33:16'),
+(56,'SOCIETE_FISCAL_MONTH_START',1,'1','chaine',0,'','2026-10-06 13:33:16'),
+(57,'FACTURE_TVAOPTION',1,'1','chaine',0,'','2026-10-06 13:33:16'),
+(58,'MAIN_MODULE_SOCIETE',1,'1','string',0,'{\"authorid\":\"1\",\"ip\":\"172.18.0.1\",\"lastactivationversion\":\"dolibarr\"}','2026-10-06 13:34:24'),
+(59,'SOCIETE_CODECLIENT_ADDON',1,'mod_codeclient_monkey','chaine',0,'Module to control third parties codes','2026-10-06 13:34:24'),
+(60,'SOCIETE_CODECOMPTA_ADDON',1,'mod_codecompta_panicum','chaine',0,'Module to control third parties codes','2026-10-06 13:34:24'),
+(61,'COMPANY_ADDON_PDF_ODT_PATH',1,'DOL_DATA_ROOT/doctemplates/thirdparties','chaine',0,NULL,'2026-10-06 13:34:24'),
+(62,'SOCIETE_ADD_REF_IN_LIST',1,'0','yesno',0,'Display customer ref into select list','2026-10-06 13:34:24'),
+(63,'MAIN_IHM_PARAMS_REV',1,'3','chaine',0,'','2026-10-06 13:34:24'),
+(64,'MAIN_FIRST_PING_OK_DATE',1,'20261006133534','chaine',0,'','2026-10-06 13:35:34'),
+(65,'MAIN_FIRST_PING_OK_ID',1,'8fd1d563da6a3ce1f4b3dda06b90fa285b4bf81b2e55d87de88c1807fc62e945 - 24.0.0','chaine',0,'','2026-10-06 13:35:34');
 /*!40000 ALTER TABLE `llx_const` ENABLE KEYS */;
 UNLOCK TABLES;
 COMMIT;
@@ -11003,21 +11003,21 @@ SET @OLD_AUTOCOMMIT=@@AUTOCOMMIT, @@AUTOCOMMIT=0;
 LOCK TABLES `llx_expensereport_ik` WRITE;
 /*!40000 ALTER TABLE `llx_expensereport_ik` DISABLE KEYS */;
 INSERT INTO `llx_expensereport_ik` VALUES
-(1,NULL,'2026-09-23 07:34:04',4,1,0.41,0,1),
-(2,NULL,'2026-09-23 07:34:04',4,2,0.244,824,1),
-(3,NULL,'2026-09-23 07:34:04',4,3,0.286,0,1),
-(4,NULL,'2026-09-23 07:34:04',5,4,0.493,0,1),
-(5,NULL,'2026-09-23 07:34:04',5,5,0.277,1082,1),
-(6,NULL,'2026-09-23 07:34:04',5,6,0.332,0,1),
-(7,NULL,'2026-09-23 07:34:04',6,7,0.543,0,1),
-(8,NULL,'2026-09-23 07:34:04',6,8,0.305,1180,1),
-(9,NULL,'2026-09-23 07:34:04',6,9,0.364,0,1),
-(10,NULL,'2026-09-23 07:34:04',7,10,0.568,0,1),
-(11,NULL,'2026-09-23 07:34:04',7,11,0.32,1244,1),
-(12,NULL,'2026-09-23 07:34:04',7,12,0.382,0,1),
-(13,NULL,'2026-09-23 07:34:04',8,13,0.595,0,1),
-(14,NULL,'2026-09-23 07:34:04',8,14,0.337,1288,1),
-(15,NULL,'2026-09-23 07:34:04',8,15,0.401,0,1);
+(1,NULL,'2026-10-06 13:30:05',4,1,0.41,0,1),
+(2,NULL,'2026-10-06 13:30:05',4,2,0.244,824,1),
+(3,NULL,'2026-10-06 13:30:05',4,3,0.286,0,1),
+(4,NULL,'2026-10-06 13:30:05',5,4,0.493,0,1),
+(5,NULL,'2026-10-06 13:30:05',5,5,0.277,1082,1),
+(6,NULL,'2026-10-06 13:30:05',5,6,0.332,0,1),
+(7,NULL,'2026-10-06 13:30:05',6,7,0.543,0,1),
+(8,NULL,'2026-10-06 13:30:05',6,8,0.305,1180,1),
+(9,NULL,'2026-10-06 13:30:05',6,9,0.364,0,1),
+(10,NULL,'2026-10-06 13:30:05',7,10,0.568,0,1),
+(11,NULL,'2026-10-06 13:30:05',7,11,0.32,1244,1),
+(12,NULL,'2026-10-06 13:30:05',7,12,0.382,0,1),
+(13,NULL,'2026-10-06 13:30:05',8,13,0.595,0,1),
+(14,NULL,'2026-10-06 13:30:05',8,14,0.337,1288,1),
+(15,NULL,'2026-10-06 13:30:05',8,15,0.401,0,1);
 /*!40000 ALTER TABLE `llx_expensereport_ik` ENABLE KEYS */;
 UNLOCK TABLES;
 COMMIT;
@@ -17346,7 +17346,10 @@ INSERT INTO `llx_rights_def` VALUES
 (352,1,'Read permissions of groups','user','',5,'hr',0,'group_advance','readperms','w',0,'1'),
 (353,1,'Create/modify groups and permissions','user','',5,'hr',0,'group_advance','write','w',0,'1'),
 (354,1,'Delete groups','user','',5,'hr',0,'group_advance','delete','w',0,'1'),
-(358,1,'Export all users','user','',5,'hr',0,'user','export','w',0,'1');
+(358,1,'Export all users','user','',5,'hr',0,'user','export','w',0,'1'),
+(1201,1,'Read exports','export','',72,'technic',0,'lire','','r',0,'1'),
+(1202,1,'Creeate/modify export','export','',72,'technic',0,'creer','','w',0,'1'),
+(1251,1,'Run mass imports of external data (data load)','import','',70,'technic',0,'run','','r',0,'1');
 /*!40000 ALTER TABLE `llx_rights_def` ENABLE KEYS */;
 UNLOCK TABLES;
 COMMIT;
@@ -17600,7 +17603,7 @@ CREATE TABLE `llx_societe` (
   KEY `idx_societe_typent` (`fk_typent`),
   KEY `idx_societe_forme_juridique` (`fk_forme_juridique`),
   KEY `idx_societe_shipping_method` (`fk_shipping_method`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -17611,9 +17614,9 @@ SET @OLD_AUTOCOMMIT=@@AUTOCOMMIT, @@AUTOCOMMIT=0;
 LOCK TABLES `llx_societe` WRITE;
 /*!40000 ALTER TABLE `llx_societe` DISABLE KEYS */;
 INSERT INTO `llx_societe` VALUES
-(1,'Client test','',1,NULL,0,NULL,1,'CU2609-00001',NULL,NULL,NULL,NULL,NULL,NULL,'',NULL,NULL,NULL,1,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[]',NULL,0,NULL,NULL,NULL,'','','','','','','','',NULL,0,NULL,NULL,'',NULL,NULL,1,0,NULL,'',0,NULL,0,0,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,NULL,0,0,0.0000,0,0.0000,NULL,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'','','2026-09-24 11:15:27','2026-09-24 11:15:27',1,1,0,'',NULL,NULL),
-(9,'TechCorp',NULL,1,NULL,0,NULL,1,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'10 Rue de la Paix','75000','Paris',0,0,NULL,NULL,NULL,NULL,'0102030405',NULL,NULL,NULL,'contact@techcorp.fr',0,NULL,0,NULL,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,NULL,NULL,NULL,NULL,NULL,1,0,NULL,NULL,NULL,NULL,0,0,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,NULL,0,0,NULL,0,NULL,NULL,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2026-09-24 11:52:54',NULL,NULL,NULL,NULL,NULL,NULL),
-(10,'GlobalMarket',NULL,1,NULL,0,NULL,1,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'45 Avenue Jean Jaures','69000','Lyon',0,0,NULL,NULL,NULL,NULL,'0405060708',NULL,NULL,NULL,'hello@globalmarket.com',0,NULL,0,NULL,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,NULL,NULL,NULL,NULL,NULL,1,0,NULL,NULL,NULL,NULL,0,0,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,NULL,0,0,NULL,0,NULL,NULL,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2026-09-24 11:52:55',NULL,NULL,NULL,NULL,NULL,NULL);
+(1,'TechCorp',NULL,1,NULL,0,NULL,1,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'10 Rue de la Paix','75000','Paris',0,0,NULL,NULL,NULL,NULL,'0102030405',NULL,NULL,NULL,'contact@techcorp.fr',0,NULL,0,NULL,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,NULL,NULL,NULL,NULL,NULL,1,0,NULL,NULL,NULL,NULL,0,0,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,NULL,0,0,NULL,0,NULL,NULL,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2026-10-06 13:36:23',NULL,NULL,NULL,NULL,NULL,NULL),
+(2,'GlobalMarket',NULL,1,NULL,0,NULL,1,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'45 Avenue Jean Jaures','69000','Lyon',0,0,NULL,NULL,NULL,NULL,'0405060708',NULL,NULL,NULL,'hello@globalmarket.com',0,NULL,0,NULL,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,NULL,NULL,NULL,NULL,NULL,1,0,NULL,NULL,NULL,NULL,0,0,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,NULL,0,0,NULL,0,NULL,NULL,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2026-10-06 13:36:24',NULL,NULL,NULL,NULL,NULL,NULL),
+(3,'L\'Atelier du Port',NULL,1,NULL,0,NULL,1,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'12 rue de l\'Église','76000','Rouen',0,0,NULL,NULL,NULL,NULL,'0235000000',NULL,NULL,NULL,'contact@atelier.fr',0,NULL,0,NULL,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,NULL,NULL,NULL,NULL,NULL,1,0,NULL,NULL,NULL,NULL,0,0,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,NULL,0,0,NULL,0,NULL,NULL,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2026-10-06 13:37:55',NULL,NULL,NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `llx_societe` ENABLE KEYS */;
 UNLOCK TABLES;
 COMMIT;
@@ -17691,7 +17694,7 @@ CREATE TABLE `llx_societe_commerciaux` (
   KEY `fk_societe_commerciaux_fk_user` (`fk_user`),
   CONSTRAINT `fk_societe_commerciaux_fk_soc` FOREIGN KEY (`fk_soc`) REFERENCES `llx_societe` (`rowid`),
   CONSTRAINT `fk_societe_commerciaux_fk_user` FOREIGN KEY (`fk_user`) REFERENCES `llx_user` (`rowid`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -17701,8 +17704,6 @@ CREATE TABLE `llx_societe_commerciaux` (
 SET @OLD_AUTOCOMMIT=@@AUTOCOMMIT, @@AUTOCOMMIT=0;
 LOCK TABLES `llx_societe_commerciaux` WRITE;
 /*!40000 ALTER TABLE `llx_societe_commerciaux` DISABLE KEYS */;
-INSERT INTO `llx_societe_commerciaux` VALUES
-(1,1,1,'SALESREPTHIRD',NULL);
 /*!40000 ALTER TABLE `llx_societe_commerciaux` ENABLE KEYS */;
 UNLOCK TABLES;
 COMMIT;
@@ -18903,7 +18904,7 @@ CREATE TABLE `llx_user` (
   UNIQUE KEY `uk_user_api_key` (`api_key`),
   KEY `idx_user_fk_societe` (`fk_soc`),
   KEY `idx_user_status_employee` (`statut`,`employee`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -18914,8 +18915,7 @@ SET @OLD_AUTOCOMMIT=@@AUTOCOMMIT, @@AUTOCOMMIT=0;
 LOCK TABLES `llx_user` WRITE;
 /*!40000 ALTER TABLE `llx_user` DISABLE KEYS */;
 INSERT INTO `llx_user` VALUES
-(1,0,NULL,NULL,1,1,0,NULL,'2026-09-23 07:34:05',NULL,NULL,'admin',NULL,NULL,'21232f297a57a5a743894a0e4a801fc3',NULL,0,NULL,NULL,NULL,'SuperAdmin',NULL,NULL,NULL,NULL,0,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2026-09-24 11:09:58','2026-09-23 07:37:26',NULL,NULL,NULL,NULL,'172.18.0.1','172.18.0.1',NULL,NULL,1,NULL,NULL,NULL,NULL,0,NULL,NULL,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
-(3,1,'',NULL,0,1,NULL,'2026-09-23 07:50:03','2026-09-23 07:50:03',1,1,'user',NULL,'user123456789','7eee07c4c334306b51c4f12691432d89',NULL,0,'dolcrypt:AES-256-CTR:10fbb3f05469219f:saRyV+LaBm9f7TKz',NULL,'','user','','','','',NULL,NULL,NULL,NULL,'','','','','','','',NULL,'','null',NULL,NULL,NULL,1,NULL,NULL,'',NULL,NULL,NULL,'','',NULL,NULL,NULL,NULL,'2026-09-23 07:50:03',NULL,NULL,'2026-09-23 07:49:58',NULL,NULL,'',NULL,1,NULL,NULL,'',NULL,0,'','',0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+(1,0,NULL,NULL,1,1,0,NULL,'2026-10-06 13:30:06',NULL,NULL,'admin',NULL,NULL,'21232f297a57a5a743894a0e4a801fc3',NULL,0,NULL,NULL,NULL,'SuperAdmin',NULL,NULL,NULL,NULL,0,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2026-10-06 13:31:28',NULL,NULL,NULL,NULL,NULL,'172.18.0.1',NULL,NULL,NULL,1,NULL,NULL,NULL,NULL,0,NULL,NULL,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `llx_user` ENABLE KEYS */;
 UNLOCK TABLES;
 COMMIT;
@@ -19139,7 +19139,7 @@ CREATE TABLE `llx_user_rights` (
   UNIQUE KEY `uk_user_rights` (`entity`,`fk_user`,`fk_id`),
   KEY `fk_user_rights_fk_user_user` (`fk_user`),
   CONSTRAINT `fk_user_rights_fk_user_user` FOREIGN KEY (`fk_user`) REFERENCES `llx_user` (`rowid`)
-) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -19150,22 +19150,22 @@ SET @OLD_AUTOCOMMIT=@@AUTOCOMMIT, @@AUTOCOMMIT=0;
 LOCK TABLES `llx_user_rights` WRITE;
 /*!40000 ALTER TABLE `llx_user_rights` DISABLE KEYS */;
 INSERT INTO `llx_user_rights` VALUES
-(28,1,1,121),
-(25,1,1,122),
-(27,1,1,125),
-(29,1,1,126),
-(30,1,1,130),
+(32,1,1,121),
+(29,1,1,122),
+(31,1,1,125),
+(33,1,1,126),
+(34,1,1,130),
 (21,1,1,251),
 (2,1,1,252),
 (4,1,1,253),
 (5,1,1,254),
 (7,1,1,255),
 (9,1,1,256),
-(31,1,1,262),
-(37,1,1,281),
-(34,1,1,282),
-(36,1,1,283),
-(38,1,1,286),
+(35,1,1,262),
+(41,1,1,281),
+(38,1,1,282),
+(40,1,1,283),
+(42,1,1,286),
 (10,1,1,341),
 (11,1,1,342),
 (12,1,1,343),
@@ -19174,7 +19174,10 @@ INSERT INTO `llx_user_rights` VALUES
 (16,1,1,352),
 (18,1,1,353),
 (20,1,1,354),
-(22,1,1,358);
+(22,1,1,358),
+(25,1,1,1201),
+(26,1,1,1202),
+(23,1,1,1251);
 /*!40000 ALTER TABLE `llx_user_rights` ENABLE KEYS */;
 UNLOCK TABLES;
 COMMIT;
@@ -19696,4 +19699,4 @@ SET AUTOCOMMIT=@OLD_AUTOCOMMIT;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*M!100616 SET NOTE_VERBOSITY=@OLD_NOTE_VERBOSITY */;
 
--- Dump completed on 2026-09-24 12:04:26
+-- Dump completed on 2026-10-06 13:38:45

@@ -14,7 +14,7 @@
 ## Prérequis
 - Docker et Docker Compose : pour la conteneurisation de l'infrastructure.
 - MariaDB : version 11.8 (spécifiée dans le docker-compose).
-- Dolibarr : version latest (dernière version stable officielle de l'image).
+- Dolibarr : version 24.0.0 (dernière version stable officielle de l'image).
 - Système d'exploitation : Compatible Windows (via Git Bash) ou Linux.
 
 ## Utilisation et plan de reprise d'activité
